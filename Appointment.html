@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denta - My Appointments</title>
+    <link rel="icon" type="image/x-icon" href="images/logo teeth.jpeg">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/Appointment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/light-mode.js"></script>
+    <script src="js/Appointment.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo-container">
+            <i class='fas fa-tooth' style='font-size:36px'></i>
+            <div class="logo-text">Denta</div>
+        </div>
+
+        <div class="nav-links">
+            <a href="/index.html" class="nav-item">Home</a>
+            <a href="/doctor.html" class="nav-item">Doctors</a>
+            <a href="/Appointment.html" class="nav-item">Appointments</a>
+            <a href="/Contact.html" class="nav-item">Contact</a>
+            <a href="/DoctorsLogin.html" class="nav-item">Login</a>
+
+            <a id="toggle-button" class="toggle-button" data-theme-toggle>
+                <i class="fa-solid fa-sun"></i>
+                <i class="fa-solid fa-moon"></i>
+                <span class="toggle-button-slider"></span>
+            </a>
+        </div>
+    </nav>
+
+    <div id="app">
+        <!-- Loading skeleton -->
+        <div id="loading" class="container">
+            <div class="loading" style="height: 24px; width: 33%; margin-bottom: 8px;"></div>
+            <div class="loading" style="height: 16px; width: 50%; margin-bottom: 16px;"></div>
+            <div class="grid grid-3">
+                <div class="loading" style="height: 100px;"></div>
+                <div class="loading" style="height: 100px;"></div>
+                <div class="loading" style="height: 100px;"></div>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div id="content" class="container" style="display:none;">
+            <h1>My Appointments</h1>
+            <p>Manage your healthcare appointments and view your medical history</p>
+
+            <!-- Stats -->
+            <div id="stats" class="grid grid-3"></div>
+
+            <!-- Tabs -->
+            <div class="tabs">
+                <div class="tab active" data-tab="upcoming">Upcoming (<span id="upcoming-count">0</span>)</div>
+                <div class="tab" data-tab="past">Past (<span id="past-count">0</span>)</div>
+                <div class="tab" data-tab="cancelled">Cancelled (<span id="cancelled-count">0</span>)</div>
+            </div>
+
+            <!-- Tab contents -->
+            <div id="upcoming" class="tab-content active"></div>
+            <div id="past" class="tab-content"></div>
+            <div id="cancelled" class="tab-content"></div>
+
+            <!-- Empty global state -->
+            <div id="no-appointments" class="empty" style="display:none;">
+                <h2>No Appointments Yet</h2>
+                <p>Start your healthcare journey by booking your first appointment.</p>
+                <a href="/doctor.html" class="btn btn-primary">Book Your First Appointment</a>
+                <a href="/index.html" class="btn btn-outline">Go Home</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <i class='fas fa-tooth' style='font-size:120px'></i>
+                <p class="footer-copyright">© 2025 Denta, Inc.<br>All rights reserved.</p>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <a href="/index.html" class="footer-link">Home</a>
+                    <a href="/doctor.html" class="footer-link">Doctors</a>
+                    <a href="/Appointment.html" class="footer-link">Appointments</a>
+                    <a href="/Contact.html" class="footer-link">Contact</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-heading">Follow Us</h3>
+                    <a href="#" class="footer-link"><i class="fab fa-facebook" style="font-size: 32px;"></i></a>
+                    <a href="#" class="footer-link"><i class="fab fa-instagram" style="font-size: 32px;"></i></a>
+                    <a href="#" class="footer-link"><i class="fab fa-linkedin" style="font-size: 32px;"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+</body>
+
+</html>
