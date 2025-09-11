@@ -3,13 +3,16 @@
         const mobileMenu = document.getElementById('mobile-menu');
         const closeMenu = document.getElementById('close-menu');
         
+        if (hamburgerMenu && mobileMenu && closeMenu) {
         hamburgerMenu.addEventListener('click', () => {
             mobileMenu.classList.add('active');
+            hamburgerMenu.classList.add('active');
             document.body.style.overflow = 'hidden';
         });
         
         closeMenu.addEventListener('click', () => {
             mobileMenu.classList.remove('active');
+            hamburgerMenu.classList.remove('active');
             document.body.style.overflow = 'auto';
         });
         
@@ -17,9 +20,11 @@
         document.querySelectorAll('.mobile-nav-item').forEach(item => {
             item.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
+                hamburgerMenu.classList.remove('active');
                 document.body.style.overflow = 'auto';
             });
         });
+        }
         
         // Dark mode toggle
         const toggleButtons = document.querySelectorAll('[data-theme-toggle]');
@@ -56,3 +61,12 @@
         
         window.addEventListener('scroll', handleScroll);
         document.addEventListener('DOMContentLoaded', handleScroll);
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 992 && mobileMenu && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                if (hamburgerMenu) hamburgerMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });

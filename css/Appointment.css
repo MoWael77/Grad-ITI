@@ -13,12 +13,12 @@
       font-size: 2rem;
       font-weight: bold;
       margin-bottom: 8px;
-      margin-left: 250px;
+      text-align: center;
     }
     p {
       color: #6b7280;
       margin-bottom: 20px;
-      margin-left: 150px;
+      text-align: center;
     }
     .grid {
       display: grid;
@@ -47,6 +47,8 @@
       display: flex;
       margin-bottom: 20px;
       border-bottom: 1px solid #ddd;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
     .tab {
       flex: 1;
@@ -54,6 +56,8 @@
       text-align: center;
       cursor: pointer;
       border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      min-width: 120px;
     }
     .tab.active {
       border-bottom: 2px solid #2563eb;
@@ -85,15 +89,24 @@
       cursor: pointer;
       font-size: 0.9rem;
       text-decoration: none;
+      transition: all 0.3s ease;
     }
     .btn-primary {
       background: #2563eb;
       color: white;
     }
+    .btn-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
     .btn-outline {
       border: 1px solid #ddd;
       background: transparent;
       color: #111827;
+    }
+    .btn-outline:hover {
+      background: #f3f4f6;
+      border-color: #9ca3af;
     }
     .loading {
       animation: pulse 1.5s infinite;
@@ -114,12 +127,20 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
+            transition: all 0.3s ease;
+        }
+        
+        .appointment-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
         }
         
         .appointment-header {
             display: flex;
             align-items: center;
             margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 15px;
         }
         
         .appointment-header img {
@@ -127,7 +148,7 @@
             height: 60px;
             border-radius: 50%;
             object-fit: cover;
-            margin-right: 15px;
+            flex-shrink: 0;
         }
         
         .doctor-info h3 {
@@ -148,18 +169,22 @@
         .detail-item {
             display: flex;
             margin-bottom: 8px;
+            align-items: center;
+            flex-wrap: wrap;
         }
         
         .detail-item i {
             width: 20px;
             margin-right: 10px;
             color: #3498db;
+            flex-shrink: 0;
         }
         
         .appointment-actions {
             display: flex;
             gap: 10px;
             margin-top: 10px;
+            flex-wrap: wrap;
         }
         
         .btn {
@@ -178,6 +203,7 @@
         
         .btn-danger:hover {
             background-color: #c0392b;
+            transform: translateY(-1px);
         }
         
         .btn-outline {
@@ -189,6 +215,7 @@
         .btn-outline:hover {
             background-color: #3498db;
             color: white;
+            transform: translateY(-1px);
         }
         
         .status-badge {
@@ -197,6 +224,7 @@
             font-size: 12px;
             font-weight: 500;
             margin-left: auto;
+            flex-shrink: 0;
         }
         
         .status-upcoming {
@@ -235,6 +263,12 @@
             padding: 20px;
             text-align: center;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
         }
         
         .card .value {
@@ -268,11 +302,17 @@
             font-weight: 500;
             color: #7f8c8d;
             border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
         }
         
         .tab.active {
             color: #3498db;
             border-bottom: 3px solid #3498db;
+        }
+        
+        .tab:hover:not(.active) {
+            color: #2c3e50;
+            background-color: #f8f9fa;
         }
         
         .tab-content {
@@ -298,3 +338,255 @@
                 background-position: -200% 0;
             }
         }
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .container {
+        max-width: 90%;
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .appointment-card {
+        padding: 15px;
+    }
+    
+    .appointment-header img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .doctor-info h3 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 6px;
+    }
+    
+    p {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    .grid-3 {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+    
+    .card {
+        padding: 15px;
+    }
+    
+    .card .value {
+        font-size: 24px;
+    }
+    
+    .card .label {
+        font-size: 12px;
+    }
+    
+    .tabs {
+        margin-bottom: 15px;
+        border-bottom: none;
+        background: #f8f9fa;
+        border-radius: 8px;
+        padding: 4px;
+    }
+    
+    .tab {
+        padding: 8px 12px;
+        border-radius: 6px;
+        border-bottom: none;
+        font-size: 0.85rem;
+        min-width: 100px;
+    }
+    
+    .tab.active {
+        background: white;
+        color: #3498db;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .appointment-card {
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .appointment-header {
+        margin-bottom: 12px;
+        gap: 10px;
+    }
+    
+    .appointment-header img {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .doctor-info h3 {
+        font-size: 15px;
+    }
+    
+    .doctor-info p {
+        font-size: 13px;
+    }
+    
+    .detail-item {
+        margin-bottom: 6px;
+        font-size: 0.85rem;
+    }
+    
+    .detail-item i {
+        width: 18px;
+        margin-right: 8px;
+        font-size: 0.9rem;
+    }
+    
+    .appointment-actions {
+        gap: 8px;
+        margin-top: 8px;
+    }
+    
+    .btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        flex: 1;
+        text-align: center;
+    }
+    
+    .status-badge {
+        padding: 3px 8px;
+        font-size: 11px;
+    }
+    
+    .empty {
+        padding: 30px 15px;
+    }
+    
+    .empty h2 {
+        font-size: 1.1rem;
+    }
+    
+    .empty p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 8px;
+    }
+    
+    h1 {
+        font-size: 1.4rem;
+    }
+    
+    .tabs {
+        padding: 2px;
+    }
+    
+    .tab {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+        min-width: 80px;
+    }
+    
+    .appointment-card {
+        padding: 10px;
+    }
+    
+    .appointment-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .appointment-header img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .status-badge {
+        align-self: flex-end;
+        margin-left: 0;
+        margin-top: -25px;
+    }
+    
+    .doctor-info h3 {
+        font-size: 14px;
+    }
+    
+    .doctor-info p {
+        font-size: 12px;
+    }
+    
+    .detail-item {
+        font-size: 0.8rem;
+    }
+    
+    .appointment-actions {
+        flex-direction: column;
+        gap: 6px;
+    }
+    
+    .btn {
+        width: 100%;
+        padding: 8px 12px;
+    }
+    
+    .empty {
+        padding: 25px 10px;
+    }
+    
+    .empty h2 {
+        font-size: 1rem;
+    }
+    
+    .empty p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+    
+    .card .value {
+        font-size: 20px;
+    }
+    
+    .tab {
+        font-size: 0.75rem;
+        padding: 5px 6px;
+    }
+    
+    .appointment-card {
+        padding: 8px;
+    }
+    
+    .detail-item {
+        font-size: 0.75rem;
+    }
+    
+    .btn {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+    }
+}

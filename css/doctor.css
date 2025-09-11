@@ -312,6 +312,231 @@ input:checked + .toggle-slider:before {
     color: white;
 }
 
+/* Responsive Design for Doctors Grid */
+@media (max-width: 1200px) {
+    .doctors-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+        padding: 0 0.5rem;
+    }
+    
+    .doctor-card {
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .search-box {
+        max-width: 600px;
+    }
+    
+    .filters {
+        gap: 0.8rem;
+        padding: 0 1rem;
+    }
+    
+    .filter-btn {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .doctors-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 2rem 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .search-box {
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    
+    .search-box input {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .filters {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.6rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .filter-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .doctors-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.2rem;
+        padding: 0;
+    }
+    
+    .doctor-card {
+        max-width: 100%;
+    }
+    
+    .card-header {
+        height: 160px;
+    }
+    
+    .card-content {
+        padding: 1.2rem;
+    }
+    
+    .doctor-name {
+        font-size: 1.2rem;
+    }
+    
+    .doctor-info {
+        font-size: 0.85rem;
+    }
+    
+    .slots {
+        padding: 0.6rem;
+        font-size: 0.85rem;
+    }
+    
+    .book-btn {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+    }
+    
+    .pagination {
+        margin: 1rem 0 2rem;
+    }
+    
+    .pagination-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        padding: 1.5rem 0.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero p {
+        font-size: 0.9rem;
+    }
+    
+    .search-box input {
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .filters {
+        gap: 0.5rem;
+        padding: 0 0.5rem;
+    }
+    
+    .filter-btn {
+        padding: 0.35rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    
+    .doctors-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        max-width: 400px;
+    }
+    
+    .card-header {
+        height: 140px;
+    }
+    
+    .card-content {
+        padding: 1rem;
+    }
+    
+    .doctor-name {
+        font-size: 1.1rem;
+    }
+    
+    .specialty-badge {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.6rem;
+    }
+    
+    .slots {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .book-btn {
+        padding: 0.6rem;
+        font-size: 0.85rem;
+    }
+    
+    .pagination-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.3rem;
+    }
+    
+    .search-box input {
+        padding: 0.6rem 0.8rem;
+    }
+    
+    .filter-btn {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.75rem;
+    }
+    
+    .doctors-grid {
+        max-width: 350px;
+    }
+    
+    .card-content {
+        padding: 0.8rem;
+    }
+    
+    .doctor-name {
+        font-size: 1rem;
+    }
+    
+    .doctor-info {
+        font-size: 0.8rem;
+    }
+}
 
 /* Enhanced Booking Modal */
 .modal {
@@ -347,6 +572,8 @@ input:checked + .toggle-slider:before {
     transform: translateY(20px);
     opacity: 0;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .modal.active .modal-content {
@@ -405,8 +632,6 @@ input:checked + .toggle-slider:before {
 
 .modal-body {
     padding: 2rem;
-    max-height: 75vh;
-    overflow-y: auto;
 }
 
 .doctor-details {
@@ -425,6 +650,7 @@ input:checked + .toggle-slider:before {
     object-fit: cover;
     border: 3px solid var(--secondary);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
 }
 
 .doctor-info {
@@ -485,6 +711,7 @@ input:checked + .toggle-slider:before {
     font-size: 1rem;
     transition: all 0.3s ease;
     font-family: inherit;
+    box-sizing: border-box;
 }
 
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
@@ -673,8 +900,9 @@ input:checked + .toggle-slider:before {
 /* Responsive Design */
 @media (max-width: 768px) {
     .modal-content {
-        max-width: 90%;
-        margin: 1rem;
+        max-width: 95%;
+        margin: 0.5rem;
+        border-radius: 16px;
     }
     
     .modal-header {
@@ -695,8 +923,33 @@ input:checked + .toggle-slider:before {
         gap: 1rem;
     }
     
+    .doctor-details img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .doctor-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .form-group input, .form-group select, .form-group textarea {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+    
     .time-slots {
         grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .time-slot {
+        padding: 0.6rem 0.4rem;
+        font-size: 0.9rem;
+    }
+    
+    .submit-btn {
+        padding: 1rem;
+        font-size: 1rem;
     }
     
     .close-modal {
@@ -704,45 +957,84 @@ input:checked + .toggle-slider:before {
         right: 1rem;
         width: 35px;
         height: 35px;
+        font-size: 1.1rem;
+    }
+    
+    .confirmation {
+        padding: 2rem;
+    }
+    
+    .confirmation i {
+        font-size: 3.5rem;
+    }
+    
+    .confirmation h2 {
+        font-size: 1.5rem;
     }
 }
 
 @media (max-width: 480px) {
-    .modal-content {
-        max-width: 95%;
-        border-radius: 16px;
-    }
-    
     .modal-header {
         padding: 1.25rem;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.3rem;
     }
     
     .modal-body {
         padding: 1.25rem;
     }
     
-    .time-slots {
-        grid-template-columns: 1fr;
+    .doctor-details img {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .doctor-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .form-group label {
+        font-size: 0.9rem;
     }
     
     .form-group input, .form-group select, .form-group textarea {
-        padding: 0.875rem 1rem;
+        padding: 0.7rem 0.9rem;
+        font-size: 0.85rem;
+    }
+    
+    .time-slots {
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+    }
+    
+    .time-slot {
+        padding: 0.5rem;
+        font-size: 0.85rem;
     }
     
     .submit-btn {
-        padding: 1.1rem;
+        padding: 0.9rem;
+        font-size: 0.95rem;
+    }
+    
+    .close-modal {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
     }
     
     .confirmation {
         padding: 1.5rem;
     }
     
-    .confirmation h2 {
-        font-size: 1.75rem;
+    .confirmation i {
+        font-size: 3rem;
     }
     
-    .confirmation i {
-        font-size: 3.5rem;
+    .confirmation h2 {
+        font-size: 1.3rem;
     }
 }
 
