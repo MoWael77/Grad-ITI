@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denta - Dental Clinic</title>
+    <link rel="icon" type="image/x-icon" href="images/logo teeth.jpeg">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/home-page.css">
+    <link rel="stylesheet" href="css/hero-section.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/light-mode.js"></script>
+    <script src="js/mobile.js"></script>
+    <script src="js/hero-section.js"></script>
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <i class='fas fa-tooth' style='font-size:36px'></i>
+            <div class="logo-text">Denta</div>
+        </div>
+
+        
+        <div class="nav-links">
+            <a href="#" class="nav-item">Home</a>
+            <a href="/doctor.html" class="nav-item">Doctors</a>
+            <a href="#" class="nav-item">Appointments</a>
+            <a href="/Contact.html" class="nav-item">Contact</a>
+            <a href="/DoctorsLogin.html" class="nav-item">Login</a>
+
+            
+
+            <a id="toggle-button" class="toggle-button" data-theme-toggle>
+                <i class="fa-solid fa-sun"></i>
+                <i class="fa-solid fa-moon"></i>
+                <span class="toggle-button-slider"></span>
+            </a>
+
+        </div>
+
+        <button class="hamburger" id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+     <div class="mobile-menu" id="mobile-menu">
+        <button class="close-menu" id="close-menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="#" class="mobile-nav-item">Home</a>
+        <a href="/doctor.html" class="mobile-nav-item">Doctors</a>
+        <a href="#" class="mobile-nav-item">Appointments</a>
+        <a href="/Contact.html" class="mobile-nav-item">Contact</a>
+        <a href="/DoctorsLogin.html" class="mobile-nav-item">Login</a>
+        
+        <div style="margin-top: 30px;">
+            <a id="toggle-button-mobile" class="toggle-button" data-theme-toggle>
+                <span class="toggle-icon sun"><i class="fa-solid fa-sun"></i></span>
+                <span class="toggle-icon moon"><i class="fa-solid fa-moon"></i></span>
+                <span class="toggle-button-slider"></span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Welcome Section -->
+    <div class="section dark-bg ">
+        <div class="text-content text-center" style="width: 100%;">
+            <h1 class="heading-main">Welcome to Denta Clinic</h1>
+            <p class="description">
+                Discover the Difference with Our Exceptional Dental Care
+            </p>
+        </div>
+    </div>
+
+    <div class="services">
+        <div class="service">
+            <a href="#" class="badge-link"></a>
+            <div class="badge">
+                <img class="tooth" src="images/cuteteeth.png" alt="Tooth">
+            </div>
+            <h3>Personalized Treatment</h3>
+
+        </div>
+
+        <div class="service">
+            <div class="badge">
+                <img class="tooth" src="images/cuteteeth.png" alt="Tooth">
+            </div>
+            <h3>Achieve a Healthy Smile</h3>
+            
+        </div>
+
+        <div class="service">
+            <div class="badge">
+                <img class="tooth" src="images/cuteteeth.png" alt="Tooth">
+            </div>
+            <h3>Maintain Your Oral Health</h3>
+           
+        </div>
+
+        <div class="service">
+            <div class="badge">
+                <img class="tooth" src="images/cuteteeth.png" alt="Tooth">
+            </div>
+            <h3>Restore Your Smile</h3>
+           
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="section">
+        <div class="text-content text-center" style="width: 100%;">
+            
+            <h1 class="heading-main mb-40">Our Services</h1>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3 class="service-title">Dental Implants</h3>
+                    <p class="service-desc">Restore Your Smile</p>
+                </div>
+                <div class="service-card">
+                    <h3 class="service-title">Comprehensive Care</h3>
+                    <p class="service-desc">Maintain Your Oral Health</p>
+                </div>
+                <div class="service-card">
+                    <h3 class="service-title">Personalized Treatment</h3>
+                    <p class="service-desc">Achieve a Healthy Smile</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Main Content -->
+   <!-- First Container: Image on Left, Text on Right -->
+    <div class="container-main">
+        <div class="container">
+            <div class="left-section">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Dentist and patient">
+                </div>
+            </div>
+            <div class="right-section">
+                <h1 class="main-heading" style="color: #000000;">Exceptional Care</h1>
+                <br>
+                <p class="description">
+                    At our dental clinic, we believe in providing personalized, comprehensive care to each and every patient. Our team of experienced dentists and skilled professionals are dedicated to helping you achieve and maintain optimal oral health.
+                </p>
+                <div class="buttons-container">
+                    <a href="/doctor.html" class="btn btn-primary">Schedule Now</a>
+                    <a href="#" class="btn btn-secondary">Learn More</a>
+                </div>
+                
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span class="feature-text">Advanced Technology</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span class="feature-text">Comfortable Environment</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span class="feature-text">Friendly Staff</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Container: Text on Left, Image on Right -->
+    <div class="container-main">
+        <div class="container">
+            <div class="left-section2">
+                <h1 class="main-heading" style="color: #000000;">Compassionate Care</h1>
+                <br>
+                <p class="description">
+                    At our dental clinic, we understand that visiting the dentist can be a stressful experience for some patients. That's why we strive to create a warm and welcoming environment where you can feel comfortable and at ease. From the moment you walk through our doors, you'll be greeted by our friendly staff who are committed to making your visit as pleasant as possible.
+                </p>
+                <div class="buttons-container">
+                    <a href="#" class="btn btn-primary">Schedule Now</a>
+                    <a href="#" class="btn btn-secondary">Learn More</a>
+                </div>
+                
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span class="feature-text">Advanced Technology</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span class="feature-text">Comfortable Environment</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span class="feature-text">Friendly Staff</span>
+                    </div>
+                </div>
+            </div>
+            <div class="right-section2">
+                <div class="image-container">
+                    <img src="images/dentist-sick.jpg" alt="Dentist and patient">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container2">
+        <div class="image-section">
+            <div class="image-overlay">
+                <h2>Your Smile Is Our Priority</h2>
+                <p>State-of-the-art dental care in a comfortable and modern environment</p>
+            </div>
+        </div>
+        
+        <div class="contact-section">
+            <div class="contact-header">
+                <h2 class="contact-title">Contact Us</h2>
+                <h1 class="appointment-title">Schedule Appointment</h1>
+                <p class="description">At our dental clinic, we are committed to providing our patients with the highest level of care and attention</p>
+                <a href="/doctor.html" class="book-button">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+     <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <i class='fas fa-tooth' style='font-size:120px'></i>
+                <p class="footer-copyright">© 2025 Denta, Inc.<br>All rights reserved.</p>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <a href="/index.html" class="footer-link">Home</a>
+                    <a href="/doctor.html" class="footer-link">Doctors</a>
+                    <a href="/Appointment.html" class="footer-link">Appointments</a>
+                    <a href="/Contact.html" class="footer-link">Contact</a>
+                </div>
+
+
+
+                <div class="footer-column">
+                    <h3 class="footer-heading">Follow Us</h3>
+                    <a href="#" class="footer-link"></a><i class="fab fa-facebook" style="font-size: 32px;"></i></a>
+                    <a href="#" class="footer-link"></a><i class="fab fa-instagram" style="font-size: 32px;"></i></a>
+                    <a href="#" class="footer-link"></a><i class="fab fa-linkedin" style="font-size: 32px;"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // Function to check if element is in viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+        // Function to handle scroll event
+        function handleScroll() {
+            const serviceCards = document.querySelectorAll('.service-card');
+
+            serviceCards.forEach(card => {
+                if (isInViewport(card)) {
+                    card.classList.add('visible');
+                }
+            });
+        }
+
+        // Add event listener for scroll
+        window.addEventListener('scroll', handleScroll);
+
+        // Initial check on page load
+        document.addEventListener('DOMContentLoaded', handleScroll);
+
+        // Add slight delay to animation for a more natural effect
+        document.addEventListener('DOMContentLoaded', function () {
+            const imageContainer = document.querySelector('.image-container');
+            imageContainer.style.animationDelay = '0.5s';
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
