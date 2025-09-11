@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denta - Dental Clinic</title>
+    <link rel="icon" type="image/x-icon" href="images/logo teeth.jpeg">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/doctor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/light-mode.js"></script>
+    <script src="js/doctor.js"></script>
+
+</head>
+
+<body>
+
+     <nav class="navbar">
+        <div class="logo-container">
+            <i class='fas fa-tooth' style='font-size:36px'></i>
+            <div class="logo-text">Denta</div>
+        </div>
+
+        <div class="nav-links">
+            <a href="/index.html" class="nav-item">Home</a>
+            <a href="/doctor.html" class="nav-item">Doctors</a>
+            <a href="/Appointment.html" class="nav-item">Appointments</a>
+            <a href="/Contact.html" class="nav-item">Contact</a>
+            <a href="/DoctorsLogin.html" class="nav-item">Login</a>
+
+            
+
+            <a id="toggle-button" class="toggle-button" data-theme-toggle>
+                <i class="fa-solid fa-sun"></i>
+                <i class="fa-solid fa-moon"></i>
+                <span class="toggle-button-slider"></span>
+            </a>
+
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Find & Book Your Specialist</h1>
+            <p>Connect with experienced healthcare professionals and book appointments at your convenience</p>
+
+            <div class="search-box">
+                <input type="text" placeholder="Search doctors by name or specialty...">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Filters -->
+        <div class="filters">
+            <button class="filter-btn active">All Specialties</button>
+            <button class="filter-btn">Orthodontics</button>
+            <button class="filter-btn">Pediatric dentist</button>
+            <button class="filter-btn">Endodontics</button>
+            <button class="filter-btn">Cosmetic dentistry</button>
+            <button class="filter-btn">Oral and maxillofacial surgery</button>
+        </div>
+
+        <!-- Doctors Grid -->
+        <div class="doctors-grid" id="doctorsGrid">
+            <!-- Doctor cards will be dynamically inserted here -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination" id="pagination">
+            <!-- Pagination will be dynamically generated -->
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Book Appointment</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="doctor-details">
+                    <img src="" alt="Doctor" id="modalDoctorImg">
+                    <div>
+                        <h3 id="modalDoctorName"></h3>
+                        <p id="modalDoctorSpecialty"></p>
+                        <p id="modalDoctorLocation"></p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <!-- Filters -->
+                    <div class="filters">
+                        <button class="filter-btn active">All Specialties</button>
+                        <button class="filter-btn">Orthodontics</button>
+                        <button class="filter-btn">Pediatric dentist</button>
+                        <button class="filter-btn">Endodontics</button>
+                        <button class="filter-btn">Cosmetic dentistry</button>
+                        <button class="filter-btn">Oral and maxillofacial surgery</button>
+                    </div>
+
+                    <!-- Doctors Grid -->
+                    <div class="doctors-grid" id="doctorsGrid">
+                        <!-- Doctor cards will be dynamically inserted here -->
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination" id="pagination">
+                        <!-- Pagination will be dynamically generated -->
+                    </div>
+                </div>
+
+                <form class="booking-form" id="bookingForm">
+                    <div class="form-group">
+                        <label for="patientName">Your Full Name</label>
+                        <input type="text" id="patientName" required placeholder="Enter your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="patientPhone">Phone Number</label>
+                        <input type="tel" id="patientPhone" required placeholder="Enter your phone number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="patientEmail">Email Address</label>
+                        <input type="email" id="patientEmail" required placeholder="Enter your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appointmentDate">Appointment Date</label>
+                        <input type="date" id="appointmentDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Available Time Slots</label>
+                        <div class="time-slots">
+                            <div class="time-slot">9:00 AM</div>
+                            <div class="time-slot">10:30 AM</div>
+                            <div class="time-slot">11:00 AM</div>
+                            <div class="time-slot">1:00 PM</div>
+                            <div class="time-slot">2:30 PM</div>
+                            <div class="time-slot">4:00 PM</div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Confirm Appointment</button>
+                </form>
+
+                <div class="confirmation" id="confirmationMessage">
+                    <i class="fas fa-check-circle"></i>
+                    <h2>Appointment Confirmed!</h2>
+                    <p>Your appointment has been successfully booked. You will receive a confirmation email shortly.</p>
+                    <button class="submit-btn" id="newBookingBtn">Book Another Appointment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <i class='fas fa-tooth' style='font-size:120px'></i>
+                <p class="footer-copyright">© 2025 Denta, Inc.<br>All rights reserved.</p>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <a href="/index.html" class="footer-link">Home</a>
+                    <a href="/doctor.html" class="footer-link">Doctors</a>
+                    <a href="/Appointment.html" class="footer-link">Appointments</a>
+                    <a href="/Contact.html" class="footer-link">Contact</a>
+                </div>
+
+
+
+                <div class="footer-column">
+                    <h3 class="footer-heading">Follow Us</h3>
+                    <a href="#" class="footer-link"></a><i class="fab fa-facebook" style="font-size: 32px;"></i></a>
+                    <a href="#" class="footer-link"></a><i class="fab fa-instagram" style="font-size: 32px;"></i></a>
+                    <a href="#" class="footer-link"></a><i class="fab fa-linkedin" style="font-size: 32px;"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
